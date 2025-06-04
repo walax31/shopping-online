@@ -8,6 +8,7 @@ import { HeartIcon } from "lucide-react";
 import { useFavoriteStore } from "@/store/favorite";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export default function FavoritePage() {
   const router = useRouter();
@@ -29,43 +30,44 @@ export default function FavoritePage() {
         {favorites.map((product) => (
           <Card
             key={product.id}
-            className="group transition hover:shadow-md gap-2"
+            className="group transition hover:shadow-lg relative overflow-hidden"
           >
-            <CardHeader className="px-6 flex justify-end">
+            <CardHeader className="absolute top-2 right-5 z-10">
               <Button
-                variant="secondary"
+                variant="ghost"
                 size="icon"
                 onClick={() => {
                   removeFavorite(product.id);
                   toast.success("Removed from favorite");
                 }}
+                aria-label="Remove from favorites"
               >
                 <HeartIcon className="w-5 h-5 fill-red-600 text-red-600" />
               </Button>
             </CardHeader>
-            <Link href={`/product/${product.id}`}>
-              <CardContent>
-                <div className="flex items-center justify-center mb-4">
-                  <div className="relative w-[200px] h-[200px]">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-contain"
-                      sizes="(min-width: 768px) 200px, 100vw"
-                      priority
-                    />
-                  </div>
+            <Link href={`/product/${product.id}`} className="block">
+              <CardContent className="p-4 flex flex-col gap-3">
+                <AspectRatio ratio={1}>
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-contain rounded bg-white dark:bg-zinc-900"
+                    sizes="(min-width: 768px) 200px, 100vw"
+                    priority
+                  />
+                </AspectRatio>
+                <div>
+                  <h2 className="text-sm font-semibold line-clamp-1">
+                    {product.name}
+                  </h2>
+                  <p className="text-muted-foreground text-sm">
+                    ฿
+                    {Number(product.price).toLocaleString("th-TH", {
+                      minimumFractionDigits: 2,
+                    })}
+                  </p>
                 </div>
-                <h2 className="text-sm font-medium line-clamp-1">
-                  {product.name}
-                </h2>
-                <p className="text-muted-foreground text-sm mb-2">
-                  ฿
-                  {Number(product.price).toLocaleString("th-TH", {
-                    minimumFractionDigits: 2,
-                  })}
-                </p>
               </CardContent>
             </Link>
           </Card>

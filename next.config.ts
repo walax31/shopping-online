@@ -3,14 +3,14 @@
 const nextConfig = {
   images: {
     domains: [
-      "media.studio7thailand.com",
       "images.samsung.com",
       "store.storeimages.cdn-apple.com",
-      "store.sony.co.th",
-      "exacoat.com",
       "www.istudio.store",
       "media-cdn.bnn.in.th",
       "media.education.studio7thailand.com",
+      "d1ncau8tqf99kp.cloudfront.net",
+      "storage.googleapis.com",
+      "cdsassets.apple.com",
     ],
   },
 };

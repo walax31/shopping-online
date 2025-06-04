@@ -6,7 +6,7 @@ export const products: ProductItem[] = [
     name: "Apple iPhone 16 Pro Max",
     desc: "สมาร์ทโฟนหน้าจอ 6.9 นิ้ว ชิป A18 Pro กล้อง 48MP",
     image:
-      "https://media.studio7thailand.com/154741/iPhone_16_Pro_Max_Black_Titanium_PDP_Image_Position_1a_Black_Titanium_Color__TH-TH-square_medium.png",
+      "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-9inch?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=eUdsd0dIb3VUOXdtWkY0VFUwVE8vbEdkZHNlSjBQRklnaFB2d3I5MW94NUhYUVRUSGZPT1hLZHJnb1RKSTNPSXdybW9LbS85Y2RJV0dJVlFIampKakswekI5ZWpRa0o2WWdVYzdzTUdBdFhrelNkd0hWUUlHbG91OUp5N01PcWE&traceId=1",
     price: 48900,
     rating: {
       rate: 4.9,
@@ -30,7 +30,7 @@ export const products: ProductItem[] = [
     name: "MacBook Air M3 13-inch",
     desc: "โน้ตบุ๊กจิ๋วล่าสุดจาก Apple ชิป M3 บางเบา พกพาง่าย",
     image:
-      "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-m4-midnight-gallery1-202503?wid=4000&hei=3074&fmt=jpeg&qlt=90&.v=eE5XY1NucjRjZXpnbnZTeEdWQUdXOEN5aTN1Szd3bzB6QjA3QWdrUitrZ1djYmVDUzhhc1RUeW9wRE1pamIxTTczL0VhTmFwUWpXdlYycEJiOVl2QmR6bjJhWkgvT2tCdzFYemk5WGFrSVdDa3lNQlM2VUFiSHRiV1dlZnZaZjQ",
+      "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbookair-og-202402?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1707414684423",
     price: 42900,
     rating: {
       rate: 4.7,
@@ -42,7 +42,7 @@ export const products: ProductItem[] = [
     name: "iPad Pro M4 11-inch",
     desc: "แท็บเล็ตประสิทธิภาพสูง ชิป M4 หน้าจอ OLED ใหม่ล่าสุด",
     image:
-      "https://www.istudio.store/cdn/shop/files/iPad_Pro_11_M4_WiFi_Silver_PDP_Image_Position_1b__en-US_3903003e-45ce-463d-9207-f303569e40e0.jpg?v=1716468151&width=2200",
+      "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MWR23TH?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1714066781765",
     price: 34900,
     rating: {
       rate: 4.6,
@@ -54,7 +54,7 @@ export const products: ProductItem[] = [
     name: "Sony WH-1000XM5",
     desc: "หูฟังไร้สายตัดเสียงรบกวนอันดับ 1 จาก Sony",
     image:
-      "https://store.sony.co.th/cdn/shop/files/WH-1000XM5_keyvisual_smokypink-Large_22fd4a3a-796e-4dbd-b985-76d5614ef106_600x.jpg?v=1738295976",
+      "https://d1ncau8tqf99kp.cloudfront.net/converted/103364_original_local_504x441_v3_converted.webp",
     price: 13990,
     rating: {
       rate: 4.8,
@@ -77,7 +77,8 @@ export const products: ProductItem[] = [
     id: "7",
     name: "Google Pixel 8 Pro",
     desc: "สมาร์ทโฟน Pure Android ชิป Tensor G3 กล้องคุณภาพเยี่ยม",
-    image: "https://exacoat.com/wp-content/uploads/Google-Pixel-8-Pro-Body.png",
+    image:
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Pixel_8_Pro_in_Porcelain.max-936x936.format-webp.webp",
     price: 38900,
     rating: {
       rate: 4.6,
@@ -89,7 +90,7 @@ export const products: ProductItem[] = [
     name: "Apple Watch Series 9",
     desc: "สมาร์ทวอทช์อัจฉริยะ ตรวจจับสุขภาพ พร้อมฟีเจอร์ใหม่ Double Tap",
     image:
-      "https://media.education.studio7thailand.com/81657/Apple_Watch_Series_9_GPS_45mm_Midnight_Aluminum_Midnight_Sport_Band_1.jpg",
+      "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/apple-watch-series-9.png",
     price: 15900,
     rating: {
       rate: 4.7,

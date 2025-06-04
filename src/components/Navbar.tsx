@@ -2,19 +2,29 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingCartIcon, HeartIcon, PuzzleIcon } from "lucide-react";
+import { ShoppingCartIcon, HeartIcon, PuzzleIcon, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "./ui/sheet";
+import { Button } from "./ui/button";
 
 const navItems = [
   { href: "/", label: "Home" },
   {
     href: "/cart",
-    icon: <ShoppingCartIcon className="w-4 h-4" />,
+    label: "Cart",
+    icon: <ShoppingCartIcon className="size-4" />,
   },
   {
     href: "/favorite",
-    icon: <HeartIcon className="w-4 h-4" />,
+    label: "Favorite",
+    icon: <HeartIcon className="size-4" />,
   },
 ];
 
@@ -29,19 +39,23 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white px-4 py-3 md:px-6">
       <nav className="flex items-center justify-between max-w-6xl mx-auto">
-        <Link href="/" className="text-xl">
-          <div className="font-bold text-black flex gap-2">
-            <PuzzleIcon />
-            Noblue
-          </div>
+        {/* LOGO */}
+        <Link
+          href="/"
+          className="text-xl font-bold flex gap-2 items-center text-black"
+        >
+          <PuzzleIcon className="size-5" />
+          Noblue
         </Link>
-        <ul className="flex items-center gap-4">
+
+        {/* DESKTOP MENU */}
+        <ul className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
-            <li key={item.href} className="flex gap-3 w-full">
+            <li key={item.href}>
               <Link
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium flex items-center gap-1 hover:underline",
+                  "text-sm font-medium flex items-center gap-1 hover:underline transition",
                   isClient && pathname === item.href
                     ? "text-black"
                     : "text-muted-foreground"
@@ -53,6 +67,37 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button size="icon" variant="ghost">
+                <Menu />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-64">
+              <SheetHeader>
+                <SheetTitle>Menu</SheetTitle>
+              </SheetHeader>
+              <nav className="space-y-4 px-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={cn(
+                      "flex items-center gap-2 text-base font-medium hover:text-black transition",
+                      pathname === item.href
+                        ? "text-black"
+                        : "text-muted-foreground"
+                    )}
+                  >
+                    {item.icon}
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </nav>
     </header>
   );
